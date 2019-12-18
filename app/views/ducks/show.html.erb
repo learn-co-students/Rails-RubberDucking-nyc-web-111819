@@ -1,0 +1,5 @@
+<h1>Duck page</h1>
+<p>Name: <%= @duck.name %></p>
+<p>Description: <%= @duck.description %></p>
+<br>
+<%= button_to "Edit Duck", edit_duck_path(@duck), method: :get %>

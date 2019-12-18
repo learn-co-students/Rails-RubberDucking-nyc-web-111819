@@ -1,0 +1,17 @@
+<h1>Student Page</h1>
+<p>Name: <%= @student.name %></p>
+<p>Mod: <%= @student.mod %></p>
+<br>
+<%= button_to "Edit Student", edit_student_path(@student), method: :get %>
+<br>
+<h4>My Ducks 🦆</h4>
+<% if @student.ducks.size == 0%>
+  <p>I have no ducks 😔</p>
+<% else%>
+  <ul>
+  <% @student.ducks.each do |duck|%>
+    <li><%= link_to duck.name, duck_path(duck) %></li>
+  <% end%>
+  </ul>
+<% end%>
+
