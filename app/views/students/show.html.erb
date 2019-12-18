@@ -1,0 +1,15 @@
+<h1><%= @student.name %>'s Profile</h1>
+
+<h3>Mod:</h3><%= @student.mod %><br>
+
+<h3><%= @student.name %>'s Ducks:</h3>
+<% if @student.ducks.none? %>
+    This student has no ducks :(
+    <% else %>
+<% @student.ducks.each do |d| %>
+    <%= link_to d.name, duck_path(d) %>
+    <% end %>
+    <% end %>
+    <br>
+    <hr>
+    <%= button_to "Edit Student", edit_student_path(@student), method: :get %>
