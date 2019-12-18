@@ -1,0 +1,13 @@
+<h1><%= @duck.name %>'s Profile</h1>
+
+<h3>Description:</h3><%= @duck.description %><br>
+<h3><%= @duck.name %>'s Students:</h3>
+<% if @duck.student == nil %>
+This duck has no students :(
+<% else %>
+<%= link_to @duck.student.name, student_path(@duck.student) %>
+<% end %>
+<br>
+<hr>
+<%= button_to "Edit Duck", edit_duck_path(@duck), method: :get %>
+
