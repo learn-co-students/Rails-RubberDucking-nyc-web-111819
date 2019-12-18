@@ -1,0 +1,11 @@
+<h1>New Ducky Form!</h1>
+
+<%= form_for(@duck) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <%= f.collection_select(:student_id, @students, :id, :name) %>
+  <%# collection_select(:post, :author_id, Author.all, :id, :name_with_initial, prompt: true) %>
+  <%= f.submit %>
+<% end %>

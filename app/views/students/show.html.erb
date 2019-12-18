@@ -1,0 +1,12 @@
+<h1> <%= @student.name %></h1>
+
+<ul>
+  <li>Mod: <%= @student.mod %> </li>
+  <% if @student.ducks.length > 0 %>
+    <%= render 'ducks' %>
+  <% else %>
+    <li>No ducks!</li>
+  <% end%>
+</ul>
+
+<%= link_to("Edit", edit_student_path(@student)) %> | <%= link_to("Show all students", students_path) %>
