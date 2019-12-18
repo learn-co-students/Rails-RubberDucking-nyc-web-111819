@@ -1,0 +1,8 @@
+<h1> <%= @duck.name %></h1>
+
+<ul>
+  <li>Description: <%= @duck.description %> </li>
+  <li>Belongs to <%= @duck.student_name %> in mod <%= @duck.student_mod %> </li>
+</ul>
+
+<%= link_to("Show all duckies", ducks_path) %>

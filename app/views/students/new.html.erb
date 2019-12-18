@@ -1,0 +1,14 @@
+<h1>New Student Form!</h1>
+
+<% if !!flash[:messages] %>
+  <%= render 'errors' %>
+<% else %>
+<% end %>
+
+<%= form_for(@student) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, required: true %>
+  <%= f.label :mod %>
+  <%= f.number_field(:mod, in: 1..5, required: true) %>
+  <%= f.submit %>
+<% end %>
