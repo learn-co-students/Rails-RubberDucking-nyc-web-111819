@@ -1,0 +1,20 @@
+<h1> Student Info </h1>
+
+<% if flash[:messages] %>
+  <h2>Errors</h2>
+  <ul>
+    <% flash[:messages].each do |error| %>
+      <li><%= error %> </li>
+    <% end%>
+  </ul>
+<% end%> 
+
+<h3>Name</h3>
+<p><%= @student.name %></p>
+<h3>Mod Number</h3>
+<p><%= @student.mod %></p>
+<ul>
+<% @student.ducks.each do |d| %>
+<li><%= link_to d.name, duck_path(d) %></li>
+<% end %>
+</ul>
