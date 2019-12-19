@@ -1,0 +1,6 @@
+<h1>Duck Show Page</h1>
+
+<h3>Name: </h3> <%= @duck.name %>
+<h3>Description: </h3> <%= @duck.description %>
+
+<%= button_to "DELETE", duck_path(@duck), method: :delete %>

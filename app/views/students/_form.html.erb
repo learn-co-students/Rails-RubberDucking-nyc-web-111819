@@ -1,0 +1,20 @@
+<% if flash[:messages] %>
+  <div id="error_explanation">
+    <font color="red"><h2>There were some errors:</h2></font>
+    <ul>
+      <% flash[:messages].each do |message| %>
+        <font color="red"><li><%= message %></li></font>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for @student do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br><br>
+    <%= f.label "Module" %>
+    <%= f.number_field :mod %>
+    <br><br>
+    <%= f.submit %>
+<% end %>
